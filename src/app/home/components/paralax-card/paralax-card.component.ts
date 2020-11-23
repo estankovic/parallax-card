@@ -13,6 +13,8 @@ export class ParalaxCardComponent implements OnInit {
 
   @Input() container: IonContent;
 
+  private isInView = false;
+
   constructor(
       private rendered: Renderer2,
       private el: ElementRef<HTMLElement>,
@@ -29,17 +31,41 @@ export class ParalaxCardComponent implements OnInit {
     this.container.getScrollElement().then(scrollElement => {
       // timeout needed for getRect to have non 0 value
       setTimeout(() => {
-        this.recalculateOffset(scrollElement, this.el.nativeElement);
+        this.startObserver(scrollElement, this.el.nativeElement);
       });
 
       this.container.ionScroll.subscribe(event => {
-        this.recalculateOffset(scrollElement, this.el.nativeElement);
+
+        if (this.isInView) {
+          this.recalculateOffset(scrollElement, this.el.nativeElement);
+        }
+
       });
     });
   }
 
   get backgroundUrl() {
     return `url(${this.imageUrl})`;
+  }
+
+  private startObserver(root: HTMLElement, card: HTMLElement) {
+    const options = {
+      root,
+      rootMargin: '0px',
+      threshold: [0, 1.0]
+    };
+
+    const observer = new IntersectionObserver((entities) => {
+      const item = entities[0];
+
+      this.isInView = item.isIntersecting;
+      if (this.isInView) {
+        this.recalculateOffset(root, this.el.nativeElement);
+      }
+
+    }, options);
+
+    observer.observe(card);
   }
 
   private map(value, x1, y1, x2, y2) {
@@ -51,8 +77,8 @@ export class ParalaxCardComponent implements OnInit {
     const cardBounds = cardElement.getBoundingClientRect();
     const cardHeight = cardBounds.bottom - cardBounds.top;
 
-    const cardOffset = cardBounds.bottom + cardHeight;
-    const scrollAreaHeight = scrollElement.clientHeight + cardHeight;
+    const cardOffset = cardBounds.bottom - containerBounds.top;
+    const scrollAreaHeight = scrollElement.offsetHeight + cardHeight;
 
     const imageOffset = -1 * this.map(cardOffset / scrollAreaHeight, 0, 1, this.offsetY * -1, this.offsetY);
 
