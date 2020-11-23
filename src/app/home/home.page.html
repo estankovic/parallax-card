@@ -6,12 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content #container [scrollEvents]="true">
   <div class="c">
-    <app-paralax-card></app-paralax-card>
-    <app-paralax-card></app-paralax-card>
-    <app-paralax-card></app-paralax-card>
-    <app-paralax-card></app-paralax-card>
-    <app-paralax-card></app-paralax-card>
+    <app-paralax-card [container]="container" *ngFor="let i of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]"></app-paralax-card>
   </div>
 </ion-content>
