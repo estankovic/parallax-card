@@ -11,8 +11,8 @@
 
   --background-offset: 0px;
 
-  --paralex-offset-y: 80px;
-  --paralex-offset-x: 0px;
+  --parallax-offset-y: 80px;
+  --parallax-offset-x: 0px;
 
 
   .background {
@@ -25,7 +25,6 @@
     top: var(--background-offset);
     left: var(--background-offset);
 
-    //transform: translateX(var(--paralex-offset-x)) translateY(var(--paralex-offset-y));
-    transform: translate3d(0, var(--paralex-offset-y), 0);
+    transform: translate3d(0, var(--parallax-offset-y), 0);
   }
 }

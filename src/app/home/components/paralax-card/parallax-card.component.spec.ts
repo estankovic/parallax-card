@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ParalaxCardComponent } from './paralax-card.component';
+import { ParallaxCardComponent } from './parallax-card.component';
 
 describe('ParalaxCardComponent', () => {
-  let component: ParalaxCardComponent;
-  let fixture: ComponentFixture<ParalaxCardComponent>;
+  let component: ParallaxCardComponent;
+  let fixture: ComponentFixture<ParallaxCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParalaxCardComponent ],
+      declarations: [ ParallaxCardComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ParalaxCardComponent);
+    fixture = TestBed.createComponent(ParallaxCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

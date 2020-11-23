@@ -2,11 +2,11 @@ import {Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 import {IonContent} from '@ionic/angular';
 
 @Component({
-  selector: 'app-paralax-card',
-  templateUrl: './paralax-card.component.html',
-  styleUrls: ['./paralax-card.component.scss'],
+  selector: 'app-parallax-card',
+  templateUrl: './parallax-card.component.html',
+  styleUrls: ['./parallax-card.component.scss'],
 })
-export class ParalaxCardComponent implements OnInit {
+export class ParallaxCardComponent implements OnInit {
 
   @Input() offsetY = 25;
   @Input() imageUrl;
@@ -82,6 +82,6 @@ export class ParalaxCardComponent implements OnInit {
 
     const imageOffset = -1 * this.map(cardOffset / scrollAreaHeight, 0, 1, this.offsetY * -1, this.offsetY);
 
-    cardElement.style.setProperty('--paralex-offset-y', `${imageOffset}px`);
+    cardElement.style.setProperty('--parallax-offset-y', `${imageOffset}px`);
   }
 }

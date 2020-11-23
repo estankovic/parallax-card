@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import {ParalaxCardComponent} from './components/paralax-card/paralax-card.component';
+import {ParallaxCardComponent} from './components/paralax-card/parallax-card.component';
 
 @NgModule({
   imports: [
@@ -14,6 +14,6 @@ import {ParalaxCardComponent} from './components/paralax-card/paralax-card.compo
     IonicModule,
     HomePageRoutingModule,
   ],
-  declarations: [HomePage, ParalaxCardComponent]
+  declarations: [HomePage, ParallaxCardComponent]
 })
 export class HomePageModule {}

@@ -1,18 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Inbox
+      Parallax
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content #container [scrollEvents]="true">
   <div class="c">
-    <app-paralax-card
-            [offsetY]="80"
+    <app-parallax-card
+            [offsetY]="120"
             [container]="container"
             [imageUrl]="'https://picsum.photos/800/600?i=' + i"
             *ngFor="let v of items; index as i"
-    ></app-paralax-card>
+    ></app-parallax-card>
   </div>
 </ion-content>
