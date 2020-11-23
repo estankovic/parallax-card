@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  --card-height: 200px;
+  --card-width: 250px;
+
+  height: var(--card-height);
+  width: var(--card-width);
+
+  --background-offset: -25px;
+
+  --paralex-offset-y: 0px;
+  --paralex-offset-x: 0px;
+
+
+  .background {
+    background-size: cover;
+    height: calc(var(--card-height) - var(--background-offset) - var(--background-offset));
+    width: calc(var(--card-width) - var(--background-offset) - var(--background-offset));
+    position: absolute;
+    z-index: 1;
+
+    top: var(--background-offset);
+    left: var(--background-offset);
+
+    transform: translateX(var(--paralex-offset-x)) translateY(var(--paralex-offset-y));
+
+  }
+
+  //.content {
+  //  z-index: 10;
+  //  background-color: red;
+  //  color: red;
+  //  position: relative;
+  //  height: 100%;
+  //  display: flex;
+  //
+  //}
+
+}
