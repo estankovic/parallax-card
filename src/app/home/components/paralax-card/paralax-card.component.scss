@@ -9,7 +9,7 @@
   height: var(--card-height);
   width: var(--card-width);
 
-  --background-offset: -25px;
+  --background-offset: 0px;
 
   --paralex-offset-y: 0px;
   --paralex-offset-x: 0px;
@@ -25,18 +25,7 @@
     top: var(--background-offset);
     left: var(--background-offset);
 
-    transform: translateX(var(--paralex-offset-x)) translateY(var(--paralex-offset-y));
-
+    //transform: translateX(var(--paralex-offset-x)) translateY(var(--paralex-offset-y));
+    transform: translate3d(0, var(--paralex-offset-y), 0);
   }
-
-  //.content {
-  //  z-index: 10;
-  //  background-color: red;
-  //  color: red;
-  //  position: relative;
-  //  height: 100%;
-  //  display: flex;
-  //
-  //}
-
 }
