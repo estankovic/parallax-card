@@ -1,0 +1,7 @@
+{
+  "name": "paralax demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
